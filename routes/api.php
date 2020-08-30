@@ -26,3 +26,6 @@ Route::apiresource('items','Api\ItemController');
 //--model=Brand (not fillter by id)
 
 //localhost:8000/api/brands
+
+Route::apiresource('users','Api\UserController');
+Route::get('filter_item/{sid}/{bid}','Api\ItemController@filter')->name('filter_item');

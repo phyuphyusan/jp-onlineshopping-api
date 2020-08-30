@@ -1,0 +1,10 @@
+Passport Config
+	-User model
+	-Authserviceprovider
+	-config/auth.php
+-------------------------------
+28.8.2020
+
+brand id
+subcategory id
+3 ku lone nae search
