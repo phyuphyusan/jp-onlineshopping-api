@@ -122,4 +122,24 @@ class ItemController extends Controller
         }
         return $items;
     }
+
+    public function filterQuery(Request $request)
+    {
+        $items =  array();
+        $name=$request->get('name');
+        $sid=$request->get('sid');
+        $bid=$request->get('bid');
+
+        if($sid && $bid && $name){
+            $items = Item::where ('name',$name)
+            ->where ('subcategory_id',$sid)
+            ->where ('brand_id',$bid)
+            ->get();
+        }else{
+            $items = Item::where ('subcategory_id',$sid)
+            ->or_where ('brand_id',$bid)
+            ->get();
+        }
+        return $items;
+    }
 }
